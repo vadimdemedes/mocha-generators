@@ -4,7 +4,7 @@ Enable support for ES6 generators in Mocha tests.
 
 ## Installation
 
-```npm install mocha-generators --save-dev`
+```npm install mocha-generators --save-dev```
 
 ## Usage
 
