@@ -4,22 +4,34 @@ Enable support for ES6 generators in Mocha tests.
 
 ![NPM stats](https://nodei.co/npm/mocha-generators.png?downloads=true)
 
-## Installation
 
-```npm install mocha-generators --save-dev```
+### Installation
 
-## Usage
+```
+npm install mocha-generators --save-dev
+```
+
+
+### Usage
 
 ```javascript
 require('mocha-generators')();
+
+it ('test something', function * () {
+	// oh, yeah, it works
+});
 ```
 
-## Tests
+
+### Tests
 
 Testing the tests, that's right. 
 
-```npm test```
+```
+npm test
+```
 
-## License
 
-Released under the MIT License.
+### License
+
+mocha-generators is released under the MIT license.
