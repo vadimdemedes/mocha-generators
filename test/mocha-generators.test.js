@@ -1,5 +1,5 @@
 /**
- * Test dependencies
+ * Dependencies
  */
 
 require('chai').should();
@@ -10,19 +10,21 @@ require('../')();
  * Tests
  */
 
-describe ('Generators in Mocha', function () {
+describe ('mocha-generators', function () {
 	var testCompleted;
 	
-	it ('should run the test', function () {
+	it ('run the test', function () {
 		testCompleted = true;
 	});
 	
-	it ('should confirm that previous test completed', function () {
+	it ('confirm that previous test completed', function () {
 		testCompleted.should.equal(true);
 		testCompleted = false;
 	});
 	
-	it ('should run the test with generator function', function *() {
+	it ('run the test with generator function', function * () {
+		testCompleted.should.equal(false);
+		
 		yield {
 			key: 'value'
 		}
@@ -30,7 +32,7 @@ describe ('Generators in Mocha', function () {
 		testCompleted = true;
 	});
 	
-	it ('should confirm that previous test completed', function () {
+	it ('confirm that previous test completed', function () {
 		testCompleted.should.equal(true);
 	});
 });
