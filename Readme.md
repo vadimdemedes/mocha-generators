@@ -1,4 +1,4 @@
-# Generators in Mocha
+# mocha-generators [![Circle CI](https://circleci.com/gh/vdemedes/mocha-generators.svg?style=svg)](https://circleci.com/gh/vdemedes/mocha-generators)
 
 Enable support for ES6 generators in Mocha tests.
 
