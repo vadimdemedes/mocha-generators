@@ -2,8 +2,6 @@
 
 Enable support for ES6 generators in Mocha tests.
 
-![NPM stats](https://nodei.co/npm/mocha-generators.png?downloads=true)
-
 
 ### Installation
 
@@ -24,8 +22,6 @@ it ('test something', function * () {
 
 
 ### Tests
-
-Testing the tests, that's right. 
 
 ```
 npm test
