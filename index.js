@@ -6,10 +6,27 @@ const run = require('co');
 
 
 /**
+ * Expose
+ */
+
+
+// support for
+// require('mocha-generators')() - deprecated
+// require('mocha-generators').install()
+module.exports = function () {
+  console.error('MOCHA-GENERATORS require(\'mocha-generators\')() is deprecated and soon will be removed, please use require(\'mocha-generators\').install() instead.');
+
+  install();
+};
+
+module.exports.install = install;
+
+
+/**
  * Make Mocha compatible with generators
  */
 
-module.exports = function () {
+function install () {
   const methods = ['it', 'before', 'after', 'beforeEach', 'afterEach'];
   
 	methods.forEach(function (name) {

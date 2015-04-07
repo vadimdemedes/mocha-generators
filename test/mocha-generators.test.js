@@ -3,7 +3,7 @@
  */
 
 require('chai').should();
-require('../')();
+require('../').install();
 
 
 /**
