@@ -4,6 +4,7 @@
   "description": "Enable support for ES6 generators in Mocha tests",
   "author": "Vadim Demedes <vdemedes@gmail.com>",
   "main": "index.js",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/vdemedes/mocha-generators"

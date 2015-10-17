@@ -30,4 +30,4 @@ npm test
 
 ### License
 
-mocha-generators is released under the MIT license.
+mocha-generators is released under [the MIT license](http://opensource.org/licenses/MIT).
