@@ -13,7 +13,7 @@ npm install mocha-generators --save-dev
 ### Usage
 
 ```javascript
-require('mocha-generators')();
+require('mocha-generators').install();
 
 it ('test something', function * () {
 	// oh, yeah, it works
@@ -24,7 +24,7 @@ it ('test something', function * () {
 ### Tests
 
 ```
-npm test
+$ npm test
 ```
 
 
