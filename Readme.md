@@ -1,33 +1,33 @@
-# mocha-generators [![Circle CI](https://circleci.com/gh/vdemedes/mocha-generators.svg?style=svg)](https://circleci.com/gh/vdemedes/mocha-generators)
+# mocha-generators [![Build Status](https://travis-ci.org/vdemedes/mocha-generators.svg?branch=master)](https://travis-ci.org/vdemedes/mocha-generators)
 
 Enable support for ES6 generators in Mocha tests.
 
 
-### Installation
+## Installation
 
 ```
-npm install mocha-generators --save-dev
+$ npm install mocha-generators --save-dev
 ```
 
 
-### Usage
+## Usage
 
-```javascript
+```js
 require('mocha-generators').install();
 
-it ('test something', function * () {
+it('test something', function * () {
 	// oh, yeah, it works
 });
 ```
 
 
-### Tests
+## Tests
 
 ```
 $ npm test
 ```
 
 
-### License
+## License
 
-mocha-generators is released under [the MIT license](http://opensource.org/licenses/MIT).
+MIT @ [Vadim Demedes](https://github.com/vdemedes)
