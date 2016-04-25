@@ -3,7 +3,8 @@
 /**
  * Dependencies
  */
-
+var path = require('path');
+var exec = require('child_process').exec;
 require('chai').should();
 require('./').install();
 
@@ -36,5 +37,11 @@ describe('mocha-generators', function () {
 
 	it('confirm that previous test completed', function () {
 		testCompleted.should.equal(true);
+	});
+
+	it('confirm it.only returns', function(done) {
+		exec(`mocha ${path.resolve(__dirname, 'only-test')}`, function(err, stdout, stderr) {
+			done(err || stderr);
+		});
 	});
 });
