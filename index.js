@@ -34,11 +34,12 @@ function install () {
 		'afterEach',
 		'before',
 		'after',
-		'it'
+		'it',
+		'it.only'
 	];
 
 	methods.forEach(function (name) {
-		let originalFn = global[name];
+		let originalFn = name.split('.').reduce((o, i) => o[i], global);
 
 		let modifiedFn = function () {
 			let args = [].slice.call(arguments);
