@@ -40,8 +40,7 @@ function install () {
 	methods.forEach(function (name) {
 		let originalFn = global[name];
 
-		let modifiedFn = function () {
-			let args = [].slice.call(arguments);
+		let patchArgs = function(args) {
 			let lastIndex = args.length - 1;
 			let test = args[lastIndex];
 
@@ -51,11 +50,15 @@ function install () {
 				};
 			}
 
-			return originalFn.apply(null, args);
+			return args;
+		};
+
+		let modifiedFn = function () {
+			return originalFn.apply(null, patchArgs.call(this, [].slice.call(arguments)));
 		};
 
 		modifiedFn.only = function only () {
-			return originalFn.only.apply(null, arguments);
+			return originalFn.only.apply(null, patchArgs.call(this, [].slice.call(arguments)));
 		};
 
 		modifiedFn.skip = function skip () {
