@@ -55,6 +55,10 @@ function install () {
 		};
 
 		modifiedFn.only = function only () {
+			if (name === 'it') {
+				throw new Error('mocha-generators does not support "it.only"');
+				return;
+			}
 			return originalFn.only.apply(null, arguments);
 		};
 
