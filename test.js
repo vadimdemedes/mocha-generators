@@ -1,25 +1,16 @@
 'use strict';
 
-/**
- * Dependencies
- */
-
 require('chai').should();
 require('./').install();
 
+describe('mocha-generators', () => {
+	let testCompleted;
 
-/**
- * Tests
- */
-
-describe('mocha-generators', function () {
-	var testCompleted;
-
-	it('run the test', function () {
+	it('run the test', () => {
 		testCompleted = true;
 	});
 
-	it('confirm that previous test completed', function () {
+	it('confirm that previous test completed', () => {
 		testCompleted.should.equal(true);
 		testCompleted = false;
 	});
@@ -34,7 +25,7 @@ describe('mocha-generators', function () {
 		testCompleted = true;
 	});
 
-	it('confirm that previous test completed', function () {
+	it('confirm that previous test completed', () => {
 		testCompleted.should.equal(true);
 	});
 });

@@ -3,33 +3,32 @@
   "version": "1.2.0",
   "description": "Enable support for ES6 generators in Mocha tests",
   "author": "Vadim Demedes <vdemedes@gmail.com>",
-  "main": "index.js",
   "license": "MIT",
-  "repository": "vdemedes/mocha-generators",
-  "scripts": {
-    "test": "make lint && make test"
-  },
+  "repository": "vadimdemedes/mocha-generators",
   "keywords": [
     "co",
     "mocha",
     "co-mocha"
   ],
-  "devDependencies": {
-    "chai": "^2.2.0",
-    "mocha": "^2.2.1",
-    "xo": "^0.9.0"
+  "scripts": {
+    "test": "xo && mocha"
   },
-  "dependencies": {
-    "co": "^4.5.1",
-    "is-generator": "^1.0.2"
+  "engines": {
+    "node": ">= 4"
   },
   "files": [
     "index.js"
   ],
+  "dependencies": {
+    "co": "^4.5.1",
+    "is-generator": "^1.0.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "xo": "^0.17.1"
+  },
   "xo": {
-    "rules": {
-      "no-multiple-empty-lines": 0,
-      "space-before-function-paren": 0
-    }
+    "env": "mocha"
   }
 }

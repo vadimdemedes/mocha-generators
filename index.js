@@ -1,35 +1,10 @@
 'use strict';
 
-/**
- * Dependencies
- */
-
 const isGenerator = require('is-generator').fn;
 const co = require('co');
 
-
-/**
- * Expose `mocha-generators`
- */
-
-// support for
-// require('mocha-generators')() - deprecated
-// require('mocha-generators').install()
-module.exports = function () {
-	console.error('MOCHA-GENERATORS require(\'mocha-generators\')() is deprecated and soon will be removed, please use require(\'mocha-generators\').install() instead.');
-
-	install();
-};
-
-module.exports.install = install;
-
-
-/**
- * Make Mocha compatible with generators
- */
-
-function install () {
-	let methods = [
+exports.install = () => {
+	const methods = [
 		'beforeEach',
 		'afterEach',
 		'before',
@@ -37,13 +12,13 @@ function install () {
 		'it'
 	];
 
-	methods.forEach(function (name) {
-		let originalFn = global[name];
+	methods.forEach(name => {
+		const originalFn = global[name];
 
 		let modifiedFn = function () {
-			let args = [].slice.call(arguments);
-			let lastIndex = args.length - 1;
-			let test = args[lastIndex];
+			const args = [].slice.call(arguments);
+			const lastIndex = args.length - 1;
+			const test = args[lastIndex];
 
 			if (isGenerator(test)) {
 				args[lastIndex] = function (done) {
@@ -54,7 +29,7 @@ function install () {
 			return originalFn.apply(null, args);
 		};
 
-		modifiedFn.only = function only () {
+		modifiedFn.only = function () {
 			if (name === 'it') {
 				throw new Error('mocha-generators does not support "it.only"');
 			}
@@ -62,10 +37,10 @@ function install () {
 			return originalFn.only.apply(null, arguments);
 		};
 
-		modifiedFn.skip = function skip () {
+		modifiedFn.skip = function () {
 			return originalFn.skip.apply(null, arguments);
 		};
 
 		global[name] = modifiedFn;
 	});
-}
+};
